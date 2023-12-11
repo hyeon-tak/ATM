@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +6,7 @@ using TMPro;
 
 public class CashManaer : MonoBehaviour
 {
-    //¾îÂ¼¸é ºÒÇÊ¿ä...?
+    //ì–´ì©Œë©´ ë¶ˆí•„ìš”...?
 
     public Text currentCash;
     public Text balance;

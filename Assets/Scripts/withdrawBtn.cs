@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class withdrawBtn : CashManaer
 {   
     /// <summary>
-    /// Ãâ±İ
+    /// ì¶œê¸ˆ
     /// </summary>
-    //ÅëÀå ÀÜ°í ºÎÁ· ÆĞ³Î
+    //í†µì¥ ì”ê³  ë¶€ì¡± íŒ¨ë„
     public GameObject lackOfCashPannel;
     public void withdraw()
     {
@@ -15,20 +15,20 @@ public class withdrawBtn : CashManaer
         bool withdrawMoneyBool = int.TryParse(withdrawMoney.text, out withdrawMoneyINT);
         if(withdrawMoneyBool)
         {
-            //ÅëÀå ÀÜ°í°¡ Ãâ±İ Èñ¸Á ±İ¾×º¸´Ù ÀÛÀ¸¸é
+            //í†µì¥ ì”ê³ ê°€ ì¶œê¸ˆ í¬ë§ ê¸ˆì•¡ë³´ë‹¤ ì‘ìœ¼ë©´
             if (int.Parse(balance.text) - withdrawMoneyINT < 0)
             {
-                //ÅëÀå ÀÜ°í ºÎÁ· ÆĞ³Î ¾×Æ¼ºê
+                //í†µì¥ ì”ê³  ë¶€ì¡± íŒ¨ë„ ì•¡í‹°ë¸Œ
                 lackOfCashPannel.SetActive(true);
             }
-            // ÅëÀå ÀÜ°íº¸´Ù Ãâ±İ Èñ¸Á ±İ¾×ÀÌ  ÀÛÀ» °æ¿ì
+            // í†µì¥ ì”ê³ ë³´ë‹¤ ì¶œê¸ˆ í¬ë§ ê¸ˆì•¡ì´  ì‘ì„ ê²½ìš°
             if (int.Parse(balance.text) - withdrawMoneyINT >= 0)
             {
-                //¼ÒÁö±İ¿¡ Ãâ±İ Èñ¸Á ±İ¾× ´õÇÏ±â
+                //ì†Œì§€ê¸ˆì— ì¶œê¸ˆ í¬ë§ ê¸ˆì•¡ ë”í•˜ê¸°
                 int currentCashTXT = int.Parse(currentCash.text) + withdrawMoneyINT;
                 currentCash.text = currentCashTXT.ToString();
 
-                //ÅëÀå ÀÜ°í¿¡ Ãâ±İ Èñ¸Á ±İ¾× »©±â
+                //í†µì¥ ì”ê³ ì— ì¶œê¸ˆ í¬ë§ ê¸ˆì•¡ ë¹¼ê¸°
                 int balanceTXT = int.Parse(balance.text) - withdrawMoneyINT;
                 balance.text = balanceTXT.ToString();
             }

@@ -1,14 +1,14 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class depositBtn : CashManaer
 {
     /// <summary>
-    /// ÀÔ±İ
+    /// ì…ê¸ˆ
     /// </summary>
     
-    //ÀÔ±İ °¡´É ±İ¾×(¼ÒÁö±İ) ºÎÁ· ÆĞ³Î
+    //ì…ê¸ˆ ê°€ëŠ¥ ê¸ˆì•¡(ì†Œì§€ê¸ˆ) ë¶€ì¡± íŒ¨ë„
     public GameObject InsufficientBalance;
 
     public void deposit()
@@ -17,20 +17,20 @@ public class depositBtn : CashManaer
         bool depositMoneyBool = int.TryParse(depositMoney.text, out depositMoneyINT);
         if (depositMoneyBool)
         {
-            //¼ÒÁö±İº¸´Ù ÀÔ±İ Èñ¸Á±İ¾×ÀÌ Å¬ ¶§
+            //ì†Œì§€ê¸ˆë³´ë‹¤ ì…ê¸ˆ í¬ë§ê¸ˆì•¡ì´ í´ ë•Œ
             if (int.Parse(currentCash.text) - depositMoneyINT < 0)
             {
-                //ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù ÆĞ³Î ¾×Æ¼ºê
+                //ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤ íŒ¨ë„ ì•¡í‹°ë¸Œ
                 InsufficientBalance.SetActive(true);
             }
-            //¼ÒÁö±İÀÌ ÀÔ±İ Èñ¸Á ±İ¾×º¸´Ù ¸¹À» ¶§ 
+            //ì†Œì§€ê¸ˆì´ ì…ê¸ˆ í¬ë§ ê¸ˆì•¡ë³´ë‹¤ ë§ì„ ë•Œ 
             else if (int.Parse(currentCash.text) - depositMoneyINT >= 0)
             {
-                //¼ÒÁö±İ¿¡¼­ ÀÔ±İ Èñ¸Á ±İ¾× »©±â
+                //ì†Œì§€ê¸ˆì—ì„œ ì…ê¸ˆ í¬ë§ ê¸ˆì•¡ ë¹¼ê¸°
                 int currentCashTXT = int.Parse(currentCash.text) - depositMoneyINT;
                 currentCash.text = currentCashTXT.ToString();
 
-                //ÅëÀå ÀÜ°í¿¡ ÀÔ±İ Èñ¸Á ±İ¾× ´õÇÏ±â
+                //í†µì¥ ì”ê³ ì— ì…ê¸ˆ í¬ë§ ê¸ˆì•¡ ë”í•˜ê¸°
                 int balanceTXT = int.Parse(balance.text) + depositMoneyINT;
                 balance.text = balanceTXT.ToString();
             }
