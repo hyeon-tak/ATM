@@ -34,11 +34,6 @@ public class depositBtn : CashManaer
                 int balanceTXT = int.Parse(balance.text) + depositMoneyINT;
                 balance.text = balanceTXT.ToString();
             }
-        }
-        else
-        {
-            depositMoney.text = "";
-        }
-        
+        }        
     }
 }

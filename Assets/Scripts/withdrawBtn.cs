@@ -33,12 +33,5 @@ public class withdrawBtn : CashManaer
                 balance.text = balanceTXT.ToString();
             }
         }
-        else
-        {
-            withdrawMoney.text = "";
-        }
-        
     }
-
-
 }
