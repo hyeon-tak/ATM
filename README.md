@@ -23,3 +23,7 @@
 * 입금
 * 출금
 * 잔액/잔고 부족 시 부족하다는 패널 띄우기
+
+# 힘들었던 점
+* TextMeshPro를 GameObject로 받아오기 위해 using TMPro; 이 필요하다는 것을 몰랐습니다
+* InputFeild를 받아 올 때는 또 TMP_InputField가 따로 필요하다는것을 또 몰랐습니다
